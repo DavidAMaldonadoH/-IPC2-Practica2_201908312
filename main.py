@@ -64,7 +64,7 @@ def menuPrincipal():
             #escribir en dot 
             f.write("digraph agenda {\n")
             f.write('bgcolor = "#caf0f8";\nfontcolor = "#03045e";\nlabelloc=t;\nlabel = "Agenda";\nedge[color="#03045e"];')
-            f.write('\nfontname = "JetBrains Mono";\nfontsize = "24.0";')
+            f.write('\nfontname = "Arial";\nfontsize = "24.0";')
             f.write('\nnode[shape="rect" color="#03045e" fillcolor="#48cae4" style="filled"]')
             for i in range(agenda.getSize()):
                if i == 0:
@@ -79,7 +79,7 @@ def menuPrincipal():
                   f.write(f'\nnodo{i}[label="Nombre: {agenda.get(i).nombre}\\nApellido: {agenda.get(i).apellido}\\nTeléfono: {agenda.get(i).telefono}"]')
             f.write('\n}')
             f.close()
-            os.system(f"dot -Nfontname=Arial -Tsvg archivo.dot -o agenda.svg")
+            os.system(f"dot -Nfontname=Arial -Tpdf archivo.dot -o agenda.pdf")
             print('\n> Agenda generada exitosamente\n')
          elif opcion == 4:#Salir
             incio = False
